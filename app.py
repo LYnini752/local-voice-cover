@@ -14,13 +14,13 @@ def run(reference, source, music, steps, shift, vg, mg, mode, device, progress=g
 def build_app():
     with gr.Blocks(title="Local Voice Cover", theme=gr.themes.Soft(), analytics_enabled=False) as demo:
         gr.Markdown("# 本地 AI 翻唱\n上传参考声音和目标歌曲，生成换音色后的音频。模型在本机运行，首次使用需要联网下载。")
-        gr.Markdown("**短片段预览版：**参考取前 25 秒，歌曲取前 60 秒。建议先试 10–20 秒片段。请使用你有权使用的声音与歌曲，分享时标明 AI 合成。")
+        gr.Markdown("**短片段预览版：** 参考取前 25 秒，歌曲取前 60 秒。建议先试 10–20 秒片段。请使用你有权使用的声音与歌曲，分享时标明 AI 合成。")
         with gr.Row():
-            reference = gr.Audio(type="filepath", label="① 参考声音（至少 3 秒，尽量干净）")
-            source = gr.Audio(type="filepath", label="② 目标歌曲 / 目标人声")
+            reference = gr.Audio(type="filepath", sources=["upload"], label="① 参考声音（至少 3 秒，尽量干净）")
+            source = gr.Audio(type="filepath", sources=["upload"], label="② 目标歌曲 / 目标人声")
         mode = gr.Radio([("完整歌曲：自动分离并保留伴奏", "song"), ("已分离的纯人声", "vocals")], value="song", label="目标音频类型")
         with gr.Accordion("调整与高级设置", open=False):
-            music = gr.Audio(type="filepath", label="纯人声模式可选：同一时间点开始的伴奏")
+            music = gr.Audio(type="filepath", sources=["upload"], label="纯人声模式可选：同一时间点开始的伴奏")
             with gr.Row():
                 steps = gr.Slider(10, 100, value=30, step=1, label="转换步数（越高越慢）")
                 shift = gr.Slider(-12, 12, value=0, step=1, label="人声移调（半音，不改变伴奏）")
