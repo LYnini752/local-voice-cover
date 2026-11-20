@@ -1,5 +1,7 @@
 # Local Voice Cover · 本地 AI 翻唱
 
+[简体中文](README.md) | [English](README.en.md)
+
 两段音频输入：**参考声音 + 想唱的歌曲**。在本机提取音色条件、分离歌曲人声、进行歌声转换，再把转换后人声混回伴奏，导出 WAV。无需为每个声音单独训练模型。
 
 这是基于 [Seed-VC](https://github.com/Plachtaa/seed-vc) 与 [Demucs](https://github.com/facebookresearch/demucs) 的短片段应用，不是新训练的基础模型。目标是让已有开源模型容易在本地使用和复现。
@@ -22,6 +24,8 @@
 下载或克隆本仓库后，在仓库目录运行：
 
 ```bash
+git clone https://github.com/LYnini752/local-voice-cover.git
+cd local-voice-cover
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt uv==0.13.9
