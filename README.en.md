@@ -91,4 +91,8 @@ python -m pytest -q
 
 Lightweight tests cover FFmpeg mixing/alignment, truncation, invalid/silent inputs, persisted errors, and concurrency protection. CI does not download large models or establish perceptual audio quality.
 
-Code is GPL-3.0. Engines, weights, FFmpeg, and dependencies retain their own licenses; see [THIRD_PARTY.md](THIRD_PARTY.md). No third-party songs, reference recordings, or model weights are distributed here. Use your own or authorized voices and songs, and label published output as AI-generated.
+Code is GPL-3.0. Engines, weights, FFmpeg, and dependencies retain their own licenses; see [THIRD_PARTY.md](THIRD_PARTY.md). The small sample recordings and AI derivative retain CC BY 4.0; see examples/README.md. Model weights are not bundled. Use your own or authorized voices and songs, and label published output as AI-generated.
+
+## Included samples
+
+See [sample data and attribution](examples/README.md) for ready-to-use inputs, offline previews, licenses, and limitations. No API credentials are included.

@@ -98,6 +98,10 @@ python -m pytest -q
 
 ## 开源与使用
 
-本仓库代码使用 GPL-3.0。引擎、权重、FFmpeg 和其他依赖各自的许可证见 [THIRD_PARTY.md](THIRD_PARTY.md)。本仓库不分发第三方歌曲、参考声音或模型权重。
+本仓库代码使用 GPL-3.0。引擎、权重、FFmpeg 和其他依赖各自的许可证见 [THIRD_PARTY.md](THIRD_PARTY.md)。示例清唱与 AI 派生音频按 CC BY 4.0 提供，见 examples/README.md；模型权重不随仓库分发。
 
 请使用自己或已获授权的声音与歌曲；发布生成结果时标明 AI 合成。上传一段声音不会使你取得该声音或歌曲的其他使用权。
+
+## 内置测试数据
+
+见 [示例数据与来源说明](examples/README.md)：包含可以直接试用的输入、离线预览方式、许可证与限制，不附带 API 密钥。

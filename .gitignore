@@ -16,3 +16,8 @@ __pycache__/
 *.safetensors
 *.log
 WORKLOG.md
+
+# Explicitly licensed small public demo clips
+!examples/reference.flac
+!examples/singing.flac
+!examples/converted-ai.flac

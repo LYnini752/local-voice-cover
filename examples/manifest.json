@@ -1,0 +1,40 @@
+{
+  "dataset": "vocadito v3",
+  "source": "https://zenodo.org/records/5578807",
+  "doi": "10.5281/zenodo.5578807",
+  "authors": [
+    "Rachel M. Bittner",
+    "Katherine Pasalo",
+    "Juan José Bosch",
+    "Gabriel Meseguer Brocal",
+    "David Rubinstein"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "archive_md5": "dea40fd18f14d899643c4ba221b33a46",
+  "archive_sha256": "e0d6b99d3f9c594afe5ae5c4d7bdacebe569e53b809e90b89d1c771c4f9990e3",
+  "files": {
+    "reference.flac": {
+      "archive_member": "Audio/vocadito_11.wav",
+      "original_sha256": "c4d669eca7e25c5037b191805b54b2c990d5e31bc77c9c77188b140100297197",
+      "sha256": "8905542444a4de36e0197a269ad774bfcfdd7e85852de7ecbd23fc8b6bdcadba",
+      "duration_seconds": 8.0,
+      "language": "English",
+      "changes": "First 8 seconds, lossless FLAC encoding; no pitch change or normalization."
+    },
+    "singing.flac": {
+      "archive_member": "Audio/vocadito_35.wav",
+      "original_sha256": "85c1c4268527cc53240e9f4f0d557d92f3bf9856d6d42ca50e80c7cbb02bea72",
+      "sha256": "56d196a725b6def7beb3e3f2aa3879c9d5aa5386669e8279aed7dda513bab774",
+      "duration_seconds": 8.0,
+      "language": "Mandarin",
+      "changes": "First 8 seconds, lossless FLAC encoding; no pitch change or normalization."
+    },
+    "converted-ai.flac": {
+      "sha256": "363439a264044be1041e9e35e5211f285b7d466028e895875993438790a9f46b",
+      "duration_seconds": 7.999274376417233,
+      "changes": "AI-generated Seed-VC singing voice conversion of the two credited inputs; 10 diffusion steps, CPU, zero pitch shift, no accompaniment; result is not a real performance by the reference singer.",
+      "license": "CC-BY-4.0"
+    }
+  }
+}

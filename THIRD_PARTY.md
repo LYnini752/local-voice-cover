@@ -9,3 +9,7 @@
 Model weights download from their publishers on first use: `Plachta/Seed-VC`, `lj1995/VoiceConversionWebUI`, `funasr/campplus`, `nvidia/bigvgan_v2_44khz_128band_512x`, `openai/whisper-small`, and the official Demucs weight host. Each weight/model card has its own terms; this repository's GPL-3.0 license does not relicense those weights or grant rights to voices/music.
 
 No reference voices, songs, third-party sample audio or model weights are published in this repository. Local developer validation may use the upstream checkout's examples without redistributing them.
+
+## Bundled sample recordings
+
+The small vocadito clips and their AI-converted derivative in `examples/` retain CC BY 4.0. See [full attribution and transformations](examples/README.md). The project GPL license does not replace the dataset license.

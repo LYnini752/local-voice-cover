@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 os.environ.setdefault("GRADIO_ANALYTICS_ENABLED", "False")
 import gradio as gr
 from cover import convert
@@ -9,6 +10,11 @@ def run(reference, source, music, steps, shift, vg, mg, mode, device, progress=g
         return convert(reference, source, music, steps, shift, vg, mg, mode, device, progress)
     except Exception as exc:
         raise gr.Error(str(exc)) from None
+
+
+def load_sample():
+    folder = Path(__file__).parent / 'examples'
+    return str(folder / 'reference.flac'), str(folder / 'singing.flac'), 'vocals', 10
 
 
 def build_app():
@@ -27,12 +33,18 @@ def build_app():
             vg = gr.Slider(0, 2, value=1, label="人声音量")
             mg = gr.Slider(0, 2, value=0.8, label="伴奏音量")
             device = gr.Dropdown(["auto", "cpu", "mps", "cuda"], value="auto", label="转换设备（内存不足可改 CPU）")
+        sample_button = gr.Button("加载免费清唱示例 · 8 秒")
+        gr.Markdown("示例来自 [vocadito / CC BY 4.0](https://zenodo.org/records/5578807)，完整署名见 examples/README.md。参考音色与目标清唱来自不同匿名歌手。")
+        with gr.Accordion("直接试听预计算结果 · 无需等待模型", open=False):
+            gr.Audio(value=str(Path(__file__).parent / "examples/converted-ai.flac"), label="AI 合成示例 · 不是参考歌手的真实演唱", interactive=False)
+            gr.Markdown("这是上述两段示例经 Seed-VC、10 步、CPU、零移调生成的实际结果，仅用于快速试听。点加载示例后可重新运行并比较；结果可能不同。")
         button = gr.Button("开始转换", variant="primary")
         with gr.Row():
             vocal = gr.Audio(label="转换后人声")
             mixed = gr.Audio(label="最终音频 · AI 合成")
         metadata = gr.File(label="下载转换记录")
         gr.Markdown("输入与结果保存在本机 `.local/jobs/`，不会自动删除；清理方法见 README。网页仅监听本机。")
+        sample_button.click(load_sample, outputs=[reference, source, mode, steps], api_name="load_sample")
         button.click(run, [reference, source, music, steps, shift, vg, mg, mode, device], [vocal, mixed, metadata], concurrency_limit=1)
     return demo
 
